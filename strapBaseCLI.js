@@ -14,4 +14,8 @@ if (args.includes('addGraph')) {
    bring.addGraph(args[3], args[4]);
 }
 
+if (args.includes('readDB')) {
+   bring.readDB(args[3]);
+}
+
 

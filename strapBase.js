@@ -35,8 +35,19 @@ function createDb(dbName, password){
 }
 
 function readDB(dbName){
+  	    dbName = dbName.toString();
+		fs.readFile(dbName, 'utf8' , function(err, data){
+           if (err) {
+   		 console.error('Cannot read database'+' ' +err)
+   				 return
+  		}
+  		console.log(data)
+		});
 
 }
+
+
+
 
 function addGraph(dbName, graph){
 	dbName = dbName.toString();
@@ -67,4 +78,4 @@ function deleteDb(dbName){
 
 
 
-module.exports = { deleteDb,addGraph,createDb };
+module.exports = { deleteDb,addGraph,createDb,readDB };
