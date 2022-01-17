@@ -4,3 +4,4 @@
 
 --function deleteDb(dbName)
 
+--function readDB(dbName)
