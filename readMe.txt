@@ -1,5 +1,5 @@
-How to use strapDb
--------------------
+How to use strapBase 
+--------------------
 
 		CLI commands
 
