@@ -1,0 +1,6 @@
+--function createDb(dbName,password)
+
+--function addGraph(dbName, graph)
+
+--function deleteDb(dbName)
+
