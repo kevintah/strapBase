@@ -7,6 +7,13 @@ function createDb(dbName, password){
 	dbName = dbName.toString();
 	password = password.toString();
 	console.log(dbName);
+
+	fs.exists(dbName, (exists) => {
+  	 console.log(exists ? 'database already exists' : 'creating database');
+	
+	
+    if(!exists){
+
 	fs.open(dbName, 'w' , function (err, file){
 		if (err){
 			console.log('Cannot create this database');
@@ -24,7 +31,12 @@ function createDb(dbName, password){
 	});
 
 }
+   });
+}
 
+function readDB(dbName){
+
+}
 
 function addGraph(dbName, graph){
 	dbName = dbName.toString();
