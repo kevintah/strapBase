@@ -6,10 +6,9 @@ var args = process.argv;
 function createDb(dbName, password){
 	dbName = dbName.toString();
 	password = password.toString();
-	console.log(dbName);
 
 	fs.exists(dbName, (exists) => {
-  	 console.log(exists ? 'database already exists' : 'creating database');
+  	 console.log(exists ? 'database already exists' : 'creating database' + ' ' + dbName);
 	
 	
     if(!exists){
@@ -35,13 +34,17 @@ function createDb(dbName, password){
 }
 
 function readDB(dbName){
+
   	    dbName = dbName.toString();
+  	    
 		fs.readFile(dbName, 'utf8' , function(err, data){
            if (err) {
-   		 console.error('Cannot read database'+' ' +err)
+   		 console.log('Cannot read database'+' ' + err );
    				 return
   		}
-  		console.log(data)
+  		data = JSON.stringify(data);
+  		data = JSON.parse(data);
+  		console.log(data);
 		});
 
 }
@@ -54,7 +57,7 @@ function addGraph(dbName, graph){
     graph  = graph.toString()
 	fs.appendFile(dbName, graph, function (err) {
 	  if (err){
-	  	console.log('Cannot add Graph')
+	  	console.log('Cannot add Graph');
 	  };
 	  console.log('Graph updated!');
 	});
@@ -62,11 +65,10 @@ function addGraph(dbName, graph){
 
 
 function deleteDb(dbName){
-
 	dbName = dbName.toString();
 	fs.unlink(dbName, function (err) {
 	  if (err){
-	  	console.log('database was not successfully completed')
+	  	console.log('database was not successfully deleted')
 	  };
 	    console.log(dbName+' ' +' was successfully deleted');
 	});
