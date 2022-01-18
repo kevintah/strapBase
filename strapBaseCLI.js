@@ -7,15 +7,15 @@ if (args.includes('createDb')) {
 }
 
 if (args.includes('deleteDb')) {
-   bring.deleteDb(args[3]);
+   bring.deleteDb(args[3],args[4]);
 }
 
 if (args.includes('addGraph')) {
-   bring.addGraph(args[3], args[4]);
+   bring.addGraph(args[3], args[4], args[5]);
 }
 
-if (args.includes('readDB')) {
-   bring.readDB(args[3]);
+if (args.includes('readDb')) {
+   bring.readDb(args[3],args[4]);
 }
 
 
