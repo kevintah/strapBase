@@ -9,7 +9,7 @@ node strapBaseCLI readDb dbName dbpassword
 
 node strapBaseCLI deleteDb dbName dbpassword
 
-node strapBaseCLI addGraph dbName graph
+node strapBaseCLI addGraph dbName graph dbpassword
 
   
     Additional Notes
